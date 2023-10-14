@@ -1,5 +1,5 @@
 class Purchase < ApplicationRecord
-  belongs_to :user, foreign_key: 'author_id'
+  belongs_to :user, foreign_key: 'user_id'
 
   has_many :purchase_categories
   has_many :categories, through: :purchase_categories
