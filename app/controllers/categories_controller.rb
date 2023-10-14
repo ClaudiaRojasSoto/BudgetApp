@@ -1,18 +1,17 @@
-# app/controllers/categories_controller.rb
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = current_user.groups # Cambiado a groups
+    @categories = current_user.categories
   end
 
   def new
-    @category = current_user.groups.build # Cambiado a groups
+    @category = current_user.categories.build
   end
 
   def create
-    @category = current_user.groups.build(category_params) # Cambiado a groups
+    @category = current_user.categories.build(category_params)
     if @category.save
       redirect_to categories_path, notice: 'Category was successfully created.'
     else
@@ -38,10 +37,10 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Group.find(params[:id]) # Cambiado a Group
+    @category = Category.find(params[:id]) 
   end
 
   def category_params
-    params.require(:group).permit(:name, :icon) # Cambiado a group
+    params.require(:category).permit(:name, :icon)
   end
 end
