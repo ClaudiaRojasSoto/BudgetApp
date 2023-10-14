@@ -1,6 +1,13 @@
+# config/routes.rb
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'home/index'
+  get 'home/start'
+  root to: 'home#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+
+  resources :categories, only: %i[index new create edit update destroy]
+  resources :purchases, only: %i[index new create edit update destroy]
+
+  resources :purchase_categories, only: %i[index new create edit update destroy]
 end
