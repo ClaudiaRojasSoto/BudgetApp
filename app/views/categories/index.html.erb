@@ -1,0 +1,12 @@
+<h2>Categorías</h2>
+
+<% @categories.each do |category| %>
+  <div class="category-item">
+    <img src="<%= category.icon %>" alt="<%= category.name %> icon">
+    <h3><%= category.name %></h3>
+    <p>Total: <%= category_total(category) %></p> <!-- Hacer método que calcule el total -->
+    <%= link_to 'Ver Transacciones', category_transactions_path(category) %>
+  </div>
+<% end %>
+
+<%= link_to 'Agregar Nueva Categoría', new_category_path, class: 'btn-add-category' %>
