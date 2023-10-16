@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;600&display=swap');
-@import "home";
-@import "signin";
+@import 'font-awesome';
+@import 'home';
+@import 'signin';
+@import 'newCategory';
 
 :root {
   --primary-color: #3778c2;
@@ -11,5 +13,21 @@
 }
 
 body {
-  font-family: var(--light-font);
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  font-family: 'Proxima Nova Bold', Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.blue {
+  background-color: var(--primary-color);
+}
+
+.green {
+  background-color: var(--secondary-color);
+}
+
+.grey {
+  color: var(--text-color);
 }
