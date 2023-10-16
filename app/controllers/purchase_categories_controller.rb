@@ -1,2 +1,0 @@
-class PurchaseCategoriesController < ApplicationController
-end
