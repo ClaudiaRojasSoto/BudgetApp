@@ -10,7 +10,7 @@ class Category < ApplicationRecord
   validates :icon, presence: true
 
   def category_total
-    # Sumar los montos de todas las compras asociadas a esta categoría
+    # This is the purchases sum of one category
     purchases.sum(:amount)
   end
 end
