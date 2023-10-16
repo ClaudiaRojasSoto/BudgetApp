@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :entity_group do
-    entity { nil }
-    group { nil }
+  factory :purchase_category do
+    purchase
+    category
   end
 end
