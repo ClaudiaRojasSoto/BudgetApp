@@ -1,4 +1,3 @@
-# app/controllers/purchases_controller.rb
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[index]
@@ -13,12 +12,8 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    # @category = Category.find(params[:category_id])
     @purchase = current_user.purchases.build(purchase_params)
-    puts "---------"
-
-    # @purchase.categories << @category
-
+    puts '---------'
     @purchase.created_at = Time.zone.now
 
     if @purchase.save
