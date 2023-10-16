@@ -1,1 +1,22 @@
-<h2>New Categories</h2>
+<div class="container">
+    <div class="header blue">
+      <div class="transaction-title">  
+        <a href="<%= categories_path %>" class="back-arrow">←</a>
+        <h1 class="main-title login-title">ADD CATEGORY</h1>
+        <a href="<%= root_path %>" class="search-icon">🔍</a> 
+      </div>  
+    </div>
+    
+<%= form_with(model: @category, url: categories_path, local: true, class: "new-form", multipart: true) do |form| %>
+  <div class="field">
+    <%= form.text_field :name, required: true, class: "input", placeholder: "Name" %>
+  </div>
+  <div class="field upload-picture">
+    <%# image_tag("restaurant.png", class: "sample-picture") %>
+    <p>Upload icon</p>
+    <%= form.file_field :icon, required: true, class: "input" %>
+  </div>
+  <div class="new-button-container">
+    <%= form.submit "CREATE", class: "new-button green" %>
+  </div>
+<% end %>
