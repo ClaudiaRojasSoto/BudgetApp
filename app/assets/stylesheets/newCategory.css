@@ -1,0 +1,15 @@
+.new-button-container {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.new-button {
+  color: white;
+  font-size: 1.5rem;
+  width: 40%;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
