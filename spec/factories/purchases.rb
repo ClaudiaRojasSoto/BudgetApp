@@ -1,8 +1,14 @@
 FactoryBot.define do
-  factory :entity do
-    author_id { 1 }
-    name { 'MyString' }
-    amount { '9.99' }
-    created_at { '2023-09-20 17:36:13' }
+  factory :purchase do
+    association :user
+    name { 'MyPurchase' }
+    amount { 1.5 }
+    created_at { Time.now }
+
+    trait :with_categories do
+      after(:create) do |purchase|
+        create_list(:category, 3, purchases: [purchase])
+      end
+    end
   end
 end
