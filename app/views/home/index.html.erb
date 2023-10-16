@@ -1,5 +1,7 @@
-<div class="centered-content">
-  <h1>BudgeTrack</h1>
+<div class="container start">
+    <h1 class="start-title">BudgeTracker</h1>
+    <div class="button-container">
+        <p class="log-in-button"><a href="<%= new_user_session_path %>">LOG IN</a></p>
+        <p class="sign-up-button"><a href="<%= new_user_registration_path %>">SIGN UP</a></p>  
+    </div>
 </div>
-<%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
-<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-secondary" %>
