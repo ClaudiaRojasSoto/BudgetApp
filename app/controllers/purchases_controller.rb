@@ -1,47 +1,62 @@
-# app/controllers/transactions_controller.rb
+# app/controllers/purchases_controller.rb
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_transaction, only: %i[edit update destroy]
+  before_action :set_category, only: %i[index]
+  before_action :set_purchase, only: %i[edit update destroy]
 
   def index
-    @transactions = current_user.entities # Cambiado a entities
+    @purchases = current_user.purchases.where(category: @category).order(created_at: :desc)
   end
 
   def new
-    @transaction = Entity.new # Cambiado a Entity
+    @purchase = current_user.purchases.build
   end
 
   def create
-    @transaction = Entity.new(transaction_params) # Cambiado a Entity
-    if @transaction.save
-      redirect_to transactions_path, notice: 'Transaction was successfully created.'
+    # @category = Category.find(params[:category_id])
+    @purchase = current_user.purchases.build(purchase_params)
+    puts "---------"
+
+    # @purchase.categories << @category
+
+    @purchase.created_at = Time.zone.now
+
+    if @purchase.save
+      puts @purchase.inspect
+      redirect_to purchases_path(category_id: @purchase.categories.first), notice: 'Purchase was successfully created.'
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit
+    # metodos para edit
+  end
 
   def update
-    if @transaction.update(transaction_params)
-      redirect_to transactions_path, notice: 'Transaction was successfully updated.'
+    if @purchase.update(purchase_params)
+      redirect_to purchases_path(@category), notice: 'Purchase was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
-    @transaction.destroy
-    redirect_to transactions_path, notice: 'Transaction was successfully destroyed.'
+    @purchase.destroy
+    redirect_to purchases_path(@category), notice: 'Purchase was successfully destroyed.'
   end
 
   private
 
-  def set_transaction
-    @transaction = Entity.find(params[:id]) # Cambiado a Entity
+  def set_category
+    @category = Category.find(params[:category_id])
   end
 
-  def transaction_params
-    params.require(:entity).permit(:name, :amount, :group_id) # Cambiado a entity y group_id
+  def set_purchase
+    @purchase = current_user.purchases.find(params[:id])
+  end
+
+  def purchase_params
+    params.require(:purchase).permit(:name, :amount, category_ids: [])
   end
 end
