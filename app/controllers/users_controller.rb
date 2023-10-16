@@ -1,3 +1,3 @@
 class UsersController < ApplicationController
-  # métodos personalizados si los necesito.
+  # métodos personalizados por si los necesito.
 end
