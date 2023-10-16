@@ -1,12 +1,49 @@
-<h2>Categories</h2>
-
-<% @categories.each do |category| %>
-  <div class="category-item">
-    <img src="<%= category.icon %>" alt="<%= category.name %> icon">
-    <h3><%= category.name %></h3>
-    <p>Total: <%= category_total(category) %></p> <!-- Hacer método que calcule el total -->
-    <%= link_to 'Ver Transacciones', category_transactions_path(category) %>
+<div>
+  <div>
+    <div>
+      <a href="<%= home_start_path %>">←</a>
+      <h2>CATEGORIES</h2>
+      <a href="<%= home_start_path %>">🔍</a>
+    </div>
+    <div>
+      <div>
+        <p></p>
+        <div></div>
+      </div>
+      <div>
+        <p>Most recent</p>
+        <div>•</div>
+      </div>
+      <div>
+        <p>Most ancient</p>
+        <div>•</div>
+      </div>
+    </div>
   </div>
-<% end %>
 
-<%= link_to 'Agregar Nueva Categoría', new_category_path, class: 'btn-add-category' %>
+  <div>
+    <h3>Gift credit</h3>
+    <%=@total_purchases%>
+  </div>
+
+  <hr>
+
+  <% @categories.each do |category| %>
+    <div>
+      <%= image_tag category.icon %>
+      <div>
+        <%= link_to category.name, purchases_path(category_id: category.id) %>
+
+
+
+        <p></p>
+        <p>Total: <%= category.category_total %></p>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+
+  <a href="<%= new_category_path %>">
+    <p>NEW CATEGORY</p>
+  </a>
+</div>
