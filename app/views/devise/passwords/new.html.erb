@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
+<div class="container form-login">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'login-form' }) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="header-container blue">
+      <a href="<%= root_path %>" class="back-arrow">←</a>
+      <h2 id="login-title">Forgot your password?</h2>
+      <%= f.submit "instructions", class: "btn-login blue" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+<%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+
+  <% end %>
+
+  <div class="forgot-password">
+  <%= link_to "Log in" , new_user_session_path %> |
+  <%= link_to "Sign up" , new_user_registration_path %> |
+</div>
+</div>
