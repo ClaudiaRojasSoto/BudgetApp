@@ -5,6 +5,6 @@ class Purchase < ApplicationRecord
   has_many :categories, through: :purchase_categories
 
   validates :name, presence: true
-  validates :amount, presence: true
+  validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :created_at, presence: true
 end
