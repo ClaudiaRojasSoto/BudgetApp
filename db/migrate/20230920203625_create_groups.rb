@@ -4,7 +4,6 @@ class CreateGroups < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :icon
       t.datetime :created_at
-
     end
   end
 end
