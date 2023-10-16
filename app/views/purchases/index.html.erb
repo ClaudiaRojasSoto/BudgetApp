@@ -1,0 +1,27 @@
+<div class="header">
+  <a href="<%= categories_path %>" class="back-button">←</a>
+  <h1 class="category-title"><%= @category.name %></h1>
+</div>
+
+<div class="total-amount">
+  <h2>Total Amount: <%= @category.category_total %></h2>
+</div>
+
+<div class="transactions-list">
+  <h2>Transactions:</h2>
+  <ul>
+    <% @category.purchases.order(created_at: :desc).each do |purchase| %>
+      <li>
+        <p><%= purchase.name %></p>
+        <p><%= purchase.amount %></p>
+        <p><%= purchase.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="add-transaction-button">
+  <a href="<%=  new_purchase_path %>" class="add-button">Add a New Transaction</a>
+</div>
+
+

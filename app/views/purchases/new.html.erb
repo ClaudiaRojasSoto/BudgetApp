@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Add a New Transaction</h1>
+
+<%= form_with(model: @purchase, url: purchases_path, local: true) do |form| %>
+
+
+    <div class="field">
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :amount, "Amount" %>
+      <%= form.number_field :amount, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :category_ids, "Categories" %>
+      <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit "Save" %>
+    </div>
+  <% end %>
+</div>
