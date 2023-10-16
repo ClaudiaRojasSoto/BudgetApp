@@ -5,7 +5,6 @@ class CreateEntities < ActiveRecord::Migration[7.0]
       t.string :name
       t.decimal :amount
       t.datetime :created_at
-
     end
   end
 end
