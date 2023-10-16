@@ -1,25 +1,24 @@
 <div>
-  <div>
-    <div>
-      <a href="<%= home_start_path %>">←</a>
-      <h2>CATEGORIES</h2>
-      <a href="<%= home_start_path %>">🔍</a>
+  <div class= "blue">
+    <div class="header-container blue">
+     <a href="<%= home_start_path %>" class="back-arrow">←</a>
+     <h2 id="login-title">CATEGORIES</h2>
+     <a href="<%= home_start_path %>" class="btn-login blue">🔍</a>
     </div>
-    <div>
-      <div>
-        <p></p>
-        <div></div>
-      </div>
-      <div>
-        <p>Most recent</p>
-        <div>•</div>
-      </div>
-      <div>
-        <p>Most ancient</p>
-        <div>•</div>
-      </div>
-    </div>
+    <div class="big-div">
+  <div class="small-div">
+    <p class="text">Some text</p>
+    <div class="dot">•</div>
   </div>
+  <div class="small-div">
+    <p class="text">Most recent</p>
+    <div class="dot">•</div>
+  </div>
+  <div class="small-div">
+    <p class="text">Most ancient</p>
+    <div class="dot">•</div>
+  </div>
+</div>
 
   <div>
     <h3>Gift credit</h3>
@@ -37,7 +36,7 @@
 
 
         <p></p>
-        <p>Total: <%= category.category_total %></p>
+        <p>Total: $ <%= category.category_total %></p>
       </div>
     </div>
     <hr>

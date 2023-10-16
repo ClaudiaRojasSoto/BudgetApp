@@ -59,3 +59,30 @@ a {
   width: 80vw;
   text-decoration: none;
 }
+
+.start-button {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--secondary-color);
+  font-family: 'Proxima Nova Light', Arial, sans-serif;
+  width: 93vw;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.start-button a {
+  color: white;
+}
+
+.start-button::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid white;
+}
