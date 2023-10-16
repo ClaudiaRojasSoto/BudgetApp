@@ -22,21 +22,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit; end
-
-  def update
-    if @category.update(category_params)
-      redirect_to categories_path, notice: 'Category was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @category.destroy
-    redirect_to categories_path, notice: 'Category was successfully destroyed.'
-  end
-
   private
 
   def set_category

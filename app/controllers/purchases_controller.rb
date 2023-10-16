@@ -24,23 +24,6 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def edit
-    # metodos para edit
-  end
-
-  def update
-    if @purchase.update(purchase_params)
-      redirect_to purchases_path(@category), notice: 'Purchase was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @purchase.destroy
-    redirect_to purchases_path(@category), notice: 'Purchase was successfully destroyed.'
-  end
-
   private
 
   def set_category
