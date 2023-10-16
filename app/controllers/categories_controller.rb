@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = current_user.categories
-    @total_purchases = Purchase.all.pluck(:amount).sum
+    @total_purchases = current_user.purchases.pluck(:amount).sum
   end
 
   def new
