@@ -1,27 +1,40 @@
-<div class="container">
-  <h1>Add a New Transaction</h1>
+<div class="blue">
+  <div class="container-sm">
+    <div class="header-container blue d-flex justify-between align-center">
+      <a href="<%= categories_path %>" class="back-arrow">←</a>
+      <h1 class="category-title">Add Transaction</h1>
+      <a href="<%= home_start_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+    </div>
+
+  </div>
+
+</div>
 
 <%= form_with(model: @purchase, url: purchases_path, local: true) do |form| %>
 
 
     <div class="field">
-      <%= form.label :name, "Name" %>
-      <%= form.text_field :name, required: true %>
+      <%= form.text_field :name, required: true, placeholder: "Name", class: "field-input" %>
     </div>
 
     <div class="field">
-      <%= form.label :amount, "Amount" %>
-      <%= form.number_field :amount, required: true %>
-    </div>
-
-    <div class="field">
-      <%= form.label :category_ids, "Categories" %>
-      <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true %>
+      <%= form.number_field :amount, required: true, placeholder: "Amount", class: "field-input" %>
     </div>
 
 
-    <div class="actions">
-      <%= form.submit "Save" %>
+  <div class="field">
+    <select name="category_ids[]" class="field-input">
+    <option value="">Categories</option>
+
+    <% current_user.categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>  
+    </select>
+  </div>
+
+
+    <div class="new-button-container">
+      <%= form.submit "Save", class: "start-button new-button green" %>
     </div>
   <% end %>
 </div>
