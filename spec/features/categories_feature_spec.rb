@@ -19,11 +19,10 @@ RSpec.feature 'Categories', type: :feature do
   end
 
   scenario 'User creates a new category' do
-    visit category_path
+    visit new_category_path
     fill_in 'Name', with: 'New Category'
+    attach_file('category_icon', Rails.root.join('spec', 'support', 'assets', 'test_icon.png'))
     click_button 'CREATE'
-    #expect(page).to have_selector('.success-message', text: 'Category was successfully created.', wait: 10)
-#
     expect(page).to have_text('New Category')
   end
 end
