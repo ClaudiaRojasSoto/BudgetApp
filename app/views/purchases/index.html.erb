@@ -1,27 +1,75 @@
-<div class="header">
-  <a href="<%= categories_path %>" class="back-button">←</a>
-  <h1 class="category-title"><%= @category.name %></h1>
+<div class="blue">
+  <div class="container-sm">
+    <div class="header-container blue d-flex justify-between align-end">
+      <a href="<%= categories_path %>" class="back-button">←</a>
+      <h1 class="category-title"><%= @category.name %></h1>
+      <a href="<%= home_start_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+    </div>
+    <div class="d-flex justify-between gap-10">
+            <div class="w-1-3">
+
+            </div>
+
+            <div class="small-div w-1-3 d-flex flex-column align-center justify-end most-recent-container ">
+              <p class="text">Most recent</p>
+              <p class="dot">•</p>
+            </div>
+            <div class="small-div w-1-3 d-flex flex-column align-center justify-end most-ancient-container">
+              <p class="text">Most ancient</p>
+              <p class="dot">•</p>
+            </div>
+    </div>
+  </div>
 </div>
 
-<div class="total-amount">
-  <h2>Total Amount: <%= @category.category_total %></h2>
+<div class="container-sm">
+  <div class="total-amount d-flex justify-between align-center">
+    <h2>Total Amount:</h2>
+    <p><%= @category.category_total %></p>
+  </div>
 </div>
 
-<div class="transactions-list">
+<hr>
+
+<div class="container-sm">
   <h2>Transactions:</h2>
-  <ul>
-    <% @category.purchases.order(created_at: :desc).each do |purchase| %>
-      <li>
-        <p><%= purchase.name %></p>
-        <p><%= purchase.amount %></p>
-        <p><%= purchase.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
-      </li>
-    <% end %>
-  </ul>
+</div>
+<hr>
+
+
+<% @category.purchases.order(created_at: :desc).each do |purchase| %>
+  <div>
+    <div class=" category-container">
+      <div class="d-flex  gap-10">
+        <div class="icon icon-purchase">
+          
+        </div>
+
+        <div class="d-flex flex-column flex-grow-1">
+
+          <div class="d-flex justify-between border-bottom-1">
+            <p class="mt-10"><%= purchase.name %></p>
+            <p class="mb-0 mt-10"><%= purchase.amount%></p>
+          </div>
+
+          <p class="mb-0 mt-10 date-text"><%= purchase.created_at.strftime("%B %d, %Y %I:%M %p")%></p>
+
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+<% end %>
 </div>
 
-<div class="add-transaction-button">
-  <a href="<%=  new_purchase_path %>" class="add-button">Add a New Transaction</a>
+
+
+
+
+
+<div class="button-container add-transaction-button">
+  <a href="<%=  new_purchase_path %>" class="start-button">Add a New Transaction</a>
 </div>
 
 
