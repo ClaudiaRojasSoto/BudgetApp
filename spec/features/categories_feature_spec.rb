@@ -21,7 +21,10 @@ RSpec.feature 'Categories', type: :feature do
   scenario 'User creates a new category' do
     visit new_category_path
     fill_in 'Name', with: 'New Category'
-    attach_file('category_icon', Rails.root.join('spec', 'support', 'assets', 'test_icon.png'))
+
+    # Wait for the file input field to become visible
+    find('input[type="file"][name="category[icon]"]', visible: :all).attach_file(Rails.root.join('spec', 'support', 'assets', 'test_icon.png'))
+
     click_button 'CREATE'
     expect(page).to have_text('New Category')
   end
