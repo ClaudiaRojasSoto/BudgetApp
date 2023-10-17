@@ -8,13 +8,12 @@ RSpec.feature 'Purchases', type: :feature do
   end
 
   scenario 'User creates a new purchase' do
-    category = create(:category, user: user)
+    create(:category, user: user, name: 'Category Name')
     visit new_purchase_path
     fill_in 'Name', with: 'New Purchase'
-    fill_in 'Amount', with: 10.99
-    select category.name, from: 'purchase_category_ids'
+    fill_in 'Amount', with: '100'
+    select 'Category Name', from: 'purchase_category_ids'
     click_button 'Save'
-
     expect(page).to have_text('New Purchase')
   end
 

@@ -23,7 +23,8 @@ RSpec.feature 'Categories', type: :feature do
     fill_in 'Name', with: 'New Category'
 
     # Wait for the file input field to become visible
-    find('input[type="file"][name="category[icon]"]', visible: :all).attach_file(Rails.root.join('spec', 'support', 'assets', 'test_icon.png'))
+    find('input[type="file"][name="category[icon]"]',
+         visible: :all).attach_file(Rails.root.join('spec', 'support', 'assets', 'test_icon.png'))
 
     click_button 'CREATE'
     expect(page).to have_text('New Category')
