@@ -1,11 +1,12 @@
-<div class="blue">
+<div class="new-category-container">
+  <div class="blue">
     <div class="container-sm">
       <div class="header-container blue">
         <a href="<%= home_start_path %>" class="back-arrow">←</a>
         <h2 id="login-title">CATEGORIES</h2>
         <a href="<%= home_start_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
       </div>
-  
+
       <div class="d-flex justify-between gap-10">
 
         <div class="w-1-3">
@@ -23,16 +24,16 @@
       </div>
     </div>
   </div>
-  
+
   <div class="container-sm">
     <div class="d-flex justify-between align-center">
       <h3>Gift credit</h3>
       <p><%=@total_purchases%></p>
     </div>
   </div>
-  
+
   <hr>
-  
+
   <div class="container-sm">
     <% @categories.each do |category| %>
       <div>
@@ -48,10 +49,10 @@
       </div>
     <% end %>
   </div>
-  
-  </div> 
-  
+
+
   <div class="button-container">
     <a href="<%= new_category_path %>" class="start-button">NEW CATEGORY</a>
   </div>
-  
+
+</div> 

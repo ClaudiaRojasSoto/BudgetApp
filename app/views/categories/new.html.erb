@@ -1,12 +1,14 @@
-<div class="container">
-    <div class="header blue">
-      <div class="transaction-title">  
+
+<div class="blue">
+    <div class="container-sm">
+      <div class="header-container blue d-flex justify-between align-center">
         <a href="<%= categories_path %>" class="back-arrow">←</a>
-        <h1 class="main-title login-title">ADD CATEGORY</h1>
-        <a href="<%= root_path %>" class="search-icon"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a> 
-        
-      </div>  
+        <h1 class="category-title">ADD CATEGORY</h1>
+        <a href="<%= home_start_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+      </div>
     </div>
+</div>
+
     
 <%= form_with(model: @category, url: categories_path, local: true, class: "new-form", multipart: true) do |form| %>
   <div class="field">
@@ -14,10 +16,15 @@
   </div>
   <div class="field upload-picture">
     <%# image_tag("restaurant.png", class: "sample-picture") %>
-    <p>Upload icon</p>
-    <%= form.file_field :icon, required: true, class: "input" %>
+    
+    <%= form.label :icon, "Upload icon", class: "custom-file-upload" %>
+    <%= form.file_field :icon, required: true, class: "input input-file", style: "display: none;" %>
   </div>
   <div class="new-button-container">
-    <%= form.submit "CREATE", class: "new-button green" %>
+
+    <%= form.submit "CREATE", class: "start-button new-button green" %>
+    </a>
+
   </div>
 <% end %>
+
