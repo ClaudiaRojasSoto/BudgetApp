@@ -1,5 +1,5 @@
 .container {
-  font-family: 'Proxima Nova Light', Arial, sans-serif;
+  font-family: "Proxima Nova Light", Arial, sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -19,18 +19,17 @@
   justify-content: center;
   align-content: center;
   height: 80%;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
   font-size: 4rem;
 }
-
-
 
 .log-in-button {
   margin: 0;
   padding: 1rem;
   text-align: center;
   background-color: var(--primary-color);
-  font-family: 'Proxima Nova Light', Arial, sans-serif;
+  font-family: "Proxima Nova Light", Arial, sans-serif;
   width: 80vw;
   text-decoration: none;
 }
@@ -49,14 +48,14 @@ a {
   text-align: center;
   background-color: white;
   color: black;
-  font-family: 'Proxima Nova Light', Arial, sans-serif;
+  font-family: "Proxima Nova Light", Arial, sans-serif;
   width: 80vw;
   text-decoration: none;
 }
 
 .button-container {
   width: 100%;
-  padding: 10px 0px;
+  padding: 10px 0;
   background-color: var(--secondary-color);
   display: flex;
   justify-content: center;
@@ -64,9 +63,9 @@ a {
 }
 
 .start-button {
-    width: 90%;
-    text-align: center;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 20px 0;
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 20px 0;
 }
