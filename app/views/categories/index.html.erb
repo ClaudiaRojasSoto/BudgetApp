@@ -1,48 +1,52 @@
-<div>
-  <div class= "blue">
-    <div class="header-container blue">
-     <a href="<%= home_start_path %>" class="back-arrow">←</a>
-     <h2 id="login-title">CATEGORIES</h2>
-     <a href="<%= home_start_path %>" class="btn-login blue">🔍</a>
-    </div>
-    <div class="big-div">
-  <div class="small-div">
-    <p class="text">Some text</p>
-    <div class="dot">•</div>
-  </div>
-  <div class="small-div">
-    <p class="text">Most recent</p>
-    <div class="dot">•</div>
-  </div>
-  <div class="small-div">
-    <p class="text">Most ancient</p>
-    <div class="dot">•</div>
-  </div>
-</div>
-
-  <div>
-    <h3>Gift credit</h3>
-    <%=@total_purchases%>
-  </div>
-
-  <hr>
-
-  <% @categories.each do |category| %>
-    <div>
-      <%= image_tag category.icon %>
-      <div>
-        <%= link_to category.name, purchases_path(category_id: category.id) %>
-
-
-
-        <p></p>
-        <p>Total: $ <%= category.category_total %></p>
+<div class="blue">
+    <div class="container-sm">
+      <div class="header-container blue">
+        <a href="<%= home_start_path %>" class="back-arrow">←</a>
+        <h2 id="login-title">CATEGORIES</h2>
+        <a href="<%= home_start_path %>" class="btn-login blue">🔍</a>
+      </div>
+  
+      <div class="d-flex justify-end gap-10">
+        <div class="small-div ">
+          <p class="text">Most recent</p>
+          <div class="dot">•</div>
+        </div>
+        <div class="small-div">
+          <p class="text">Most ancient</p>
+          <div class="dot">•</div>
+        </div>
       </div>
     </div>
-    <hr>
-  <% end %>
-
-  <a href="<%= new_category_path %>">
-    <p>NEW CATEGORY</p>
-  </a>
-</div>
+  </div>
+  
+  <div class="container-sm">
+    <div class="d-flex justify-between align-center">
+      <h3>Gift credit</h3>
+      <p><%=@total_purchases%></p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <div class="container-sm">
+    <% @categories.each do |category| %>
+      <div>
+        <div class="d-flex justify-between align-start category-container">
+          <div class="d-flex justify-between align-start gap-10">
+            <div class="icon">
+              <%= image_tag category.icon %>
+            </div>
+            <%= link_to category.name, purchases_path(category_id: category.id), class: "mt-10" %>
+          </div>
+          <p class="mb-0 mt-10">Total: $ <%= category.category_total %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  </div> 
+  
+  <div class="button-container">
+    <a href="<%= new_category_path %>" class="start-button">NEW CATEGORY</a>
+  </div>
+  

@@ -23,13 +23,7 @@
   font-size: 4rem;
 }
 
-.button-container {
-  height: 20%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+
 
 .log-in-button {
   margin: 0;
@@ -60,29 +54,19 @@ a {
   text-decoration: none;
 }
 
-.start-button {
-  margin: 0;
-  padding: 1rem;
-  text-align: center;
+.button-container {
+  width: 100%;
+  padding: 10px 0px;
   background-color: var(--secondary-color);
-  font-family: 'Proxima Nova Light', Arial, sans-serif;
-  width: 93vw;
-  text-decoration: none;
-  color: white;
-  position: relative;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.start-button a {
-  color: white;
-}
-
-.start-button::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 1px solid white;
+.start-button {
+    width: 90%;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 20px 0;
 }
