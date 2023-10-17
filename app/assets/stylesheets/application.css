@@ -32,3 +32,8 @@ body {
 .grey {
   color: var(--text-color);
 }
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+}
