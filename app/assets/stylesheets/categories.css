@@ -263,3 +263,15 @@ img {
   color: white;
   border-radius: 4px;
 }
+
+#purchase_category_ids {
+  width: 100%;
+  color: #80868b;
+  padding-left: 15px;
+  height: 4vh;
+}
+
+.label-category {
+  padding-left: 15px;
+  color: #80868b;
+}

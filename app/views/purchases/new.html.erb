@@ -31,11 +31,11 @@
   <%= form.number_field :amount, required: true, placeholder: "Amount", class: "input" %>
 </div>
 
- <div class="field">
-  <%# form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input-option" %>
-<%= form.collection_select :category_ids, current_user.categories, :id, :name, required: true, class: "input" %>
-
- </div>  
+<div class="field field-category">
+  <%= label_tag 'category_ids', 'Select a Category:', class:"label-category" %>
+  <%= form.collection_select :category_ids, current_user.categories, :id, :name, required: true, class: "input" %>
+</div>
+  
 
 
     <div class="new-button-container footer">
