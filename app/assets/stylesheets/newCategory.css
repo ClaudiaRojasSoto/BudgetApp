@@ -17,18 +17,14 @@
   padding: 20px 0;
 }
 
-.new-category-container{
+.new-category-container {
   position: relative;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-.field-input{
+.field-input {
   width: 100%;
   padding: 15px 0;
-  
 }
-
-
-
