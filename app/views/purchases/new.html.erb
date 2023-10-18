@@ -32,7 +32,9 @@
 </div>
 
 <div class="field">
-  <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input-option" %>
+  <%# form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input-option" %>
+<%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)", selected: '' }, multiple: true, required: true, class: "input-option" %>
+
 </div>
 
 

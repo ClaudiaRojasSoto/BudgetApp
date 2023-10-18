@@ -7,4 +7,13 @@ class Purchase < ApplicationRecord
   validates :name, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :created_at, presence: true
+  validate :at_least_one_category
+
+  private
+
+  def at_least_one_category
+    return unless categories.empty?
+
+    errors.add(:categories, 'must have at least one category')
+  end
 end

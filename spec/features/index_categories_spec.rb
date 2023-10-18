@@ -5,7 +5,7 @@ RSpec.feature 'Categories Page', type: :feature do
   let(:total_purchases) { 1000 }
 
   before do
-    allow(user).to receive_message_chain(:purchases, :pluck, :sum).and_return(total_purchases)
+    allow(user).to receive_message_chain(:purchases, :includes, :pluck, :sum).and_return(total_purchases)
     login_as(user, scope: :user)
     visit categories_path
   end

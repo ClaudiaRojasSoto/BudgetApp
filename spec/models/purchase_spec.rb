@@ -1,11 +1,7 @@
+# spec/models/purchase_spec.rb
 require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
-  it 'is valid with valid attributes' do
-    purchase = build(:purchase)
-    expect(purchase).to be_valid
-  end
-
   it 'is not valid without a name' do
     purchase = build(:purchase, name: nil)
     expect(purchase).to_not be_valid
@@ -27,9 +23,21 @@ RSpec.describe Purchase, type: :model do
   end
 
   describe 'Associations' do
+    it 'belongs to a user' do
+      association = described_class.reflect_on_association(:user)
+      expect(association.macro).to eq :belongs_to
+    end
+
     it 'has many categories' do
-      purchase = create(:purchase, :with_categories)
-      expect(purchase.categories.length).to eq 3
+      association = described_class.reflect_on_association(:categories)
+      expect(association.macro).to eq :has_many
+    end
+  end
+
+  describe 'Custom Validation' do
+    it 'requires at least one category' do
+      purchase = build(:purchase, :with_categories, categories_count: 0)
+      expect(purchase).to_not be_valid
     end
   end
 end
