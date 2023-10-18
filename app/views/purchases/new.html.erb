@@ -1,27 +1,30 @@
+<div class="header-container blue d-flex justify-between align-end">
+      <a href="javascript:history.back()" class="back-button">←</a>
+
+      <h1 class="category-title">Add Transaction</h1>
+      <a href="<%= purchases_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+    </div>
+
 <div class="container">
-  <h1>Add a New Transaction</h1>
 
 <%= form_with(model: @purchase, url: purchases_path, local: true) do |form| %>
 
 
     <div class="field">
-      <%= form.label :name, "Name" %>
-      <%= form.text_field :name, required: true %>
-    </div>
+  <%= form.text_field :name, required: true, placeholder: "Name", class: "input" %>
+</div>
 
-    <div class="field">
-      <%= form.label :amount, "Amount" %>
-      <%= form.number_field :amount, required: true %>
-    </div>
+<div class="field">
+  <%= form.number_field :amount, required: true, placeholder: "Amount", class: "input" %>
+</div>
 
-    <div class="field">
-      <%= form.label :category_ids, "Categories" %>
-      <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true %>
-    </div>
+<div class="field">
+  <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input" %>
+</div>
 
 
-    <div class="actions">
-      <%= form.submit "Save" %>
+    <div class="new-button-container footer">
+      <%= form.submit "Save", class: "start-button new-button green" %>
     </div>
   <% end %>
 </div>
