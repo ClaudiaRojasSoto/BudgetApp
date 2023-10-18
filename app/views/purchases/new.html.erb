@@ -1,10 +1,23 @@
-<div class="header-container blue d-flex justify-between align-end">
-      <a href="javascript:history.back()" class="back-button">←</a>
+<div class="header-container blue d-flex justify-between align-center">
+      <a href="javascript:history.back()" class="back-button"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
 
       <h1 class="category-title">Add Transaction</h1>
       <a href="<%= purchases_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
     </div>
 
+
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 <div class="container">
 
 <%= form_with(model: @purchase, url: purchases_path, local: true) do |form| %>
@@ -19,12 +32,12 @@
 </div>
 
 <div class="field">
-  <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input" %>
+  <%= form.collection_select :category_ids, current_user.categories, :id, :name, { include_blank: "Select category(s)" }, multiple: true, required: true, class: "input-option" %>
 </div>
 
 
     <div class="new-button-container footer">
-      <%= form.submit "Save", class: "start-button new-button green" %>
+      <%= form.submit "Save", class: "start-button new-button green pointer" %>
     </div>
   <% end %>
 </div>

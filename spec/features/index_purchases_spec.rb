@@ -6,7 +6,7 @@ RSpec.feature 'Purchase Index Page', type: :feature do
 
   before do
     login_as(user, scope: :user)
-    visit purchases_path(category_id: category.id) # Utiliza purchases_path y pasa el id de la categoría
+    visit purchases_path(category_id: category.id)
   end
 
   scenario 'displays the category name' do

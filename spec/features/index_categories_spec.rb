@@ -20,7 +20,7 @@ RSpec.feature 'Categories Page', type: :feature do
   end
 
   scenario 'muestra los enlaces de navegación' do
-    expect(page).to have_link('←')
+    expect(page).to have_css('i.fa-solid.fa-arrow-left')
     expect(page).to have_link('NEW CATEGORY', href: new_category_path)
   end
 

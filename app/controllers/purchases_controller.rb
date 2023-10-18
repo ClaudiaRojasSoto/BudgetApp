@@ -17,9 +17,10 @@ class PurchasesController < ApplicationController
     @purchase.created_at = Time.zone.now
 
     if @purchase.save
-      puts @purchase.inspect
-      redirect_to purchases_path(category_id: @purchase.categories.first), notice: 'Purchase was successfully created.'
+      flash[:notice] = 'Purchase was successfully created.'
+      redirect_to purchases_path(category_id: @purchase.categories.first)
     else
+      flash.now[:alert] = 'Failed to create purchase.'
       render :new
     end
   end
