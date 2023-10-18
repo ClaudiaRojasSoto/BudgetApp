@@ -12,10 +12,12 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    puts params
     @purchase = current_user.purchases.build(purchase_params)
     @purchase.created_at = Time.zone.now
-
+    puts @purchase.inspect
     if @purchase.category_ids.empty?
+      puts 'entrando al if'
       flash.now[:alert] = 'Please select at least one category.'
       @categories = current_user.categories
       render :new
@@ -40,6 +42,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, category_ids: [])
+    params.require(:purchase).permit(:name, :amount, :category_ids)
   end
 end
