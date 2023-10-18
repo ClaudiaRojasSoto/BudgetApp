@@ -11,6 +11,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [💻 Explanatory Video ](#-explanatory-video-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -29,7 +30,7 @@
 
 # 📖 The Budget App <a name="about-project"></a>
 
-**[The Budget App]** is a mobile web application designed for efficient budget management. With this app, users can register and log in to maintain their personal financial records. They can add new transactions associated with specific categories and gain insights into their spending patterns by tracking expenses within each category. The app adheres to best practices in Ruby development, follows a well-defined design inspired by Gregoire Vella's work on Behance, and ensures the security of user data through the use of authentication and input validation. The project also includes unit and integration tests for critical components, utilizes Postgres as the database, employs Devise for authentication, and provides thorough documentation, including a brief project video showcasing its features.
+**The Budget App** is a mobile web application designed for efficient budget management. With this app, users can register and log in to maintain their personal financial records. They can add new transactions associated with specific categories and gain insights into their spending patterns by tracking expenses within each category. The app adheres to best practices in Ruby development, follows a well-defined design inspired by Gregoire Vella's work on Behance, and ensures the security of user data through the use of authentication and input validation. The project also includes unit and integration tests for critical components, utilizes Postgres as the database, employs Devise for authentication, and provides thorough documentation, including a brief project video showcasing its features.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,13 +67,17 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- 
+## 💻 Explanatory Video <a name="explanatory-video"></a>
+
+- [Explanatory Video](https://www.loom.com/share/227b3392ea7a469aa630f4119a301a2b?sid=f2cf8ea1-104f-4a43-824a-29900cbb0633)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://reactcapstonproject.onrender.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
