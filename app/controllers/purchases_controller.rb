@@ -5,7 +5,7 @@ class PurchasesController < ApplicationController
 
   def index
     @purchases = current_user.purchases.where(category: @category).includes(:categories).order(created_at: :desc)
-  end  
+  end
 
   def new
     @purchase = current_user.purchases.build
