@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;600&display=swap');
-@import 'font-awesome';
+
 @import 'home';
 @import 'signin';
 @import 'categories';
 @import 'newCategory';
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;600&display=swap');
+@import 'font-awesome';
 
 :root {
   --primary-color: #3778c2;
