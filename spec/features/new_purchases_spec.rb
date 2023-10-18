@@ -9,6 +9,6 @@ RSpec.feature 'Transaction Form Page', type: :feature do
 
   scenario 'displays the transaction form' do
     expect(page).to have_content('Add Transaction')
-    expect(page).to have_content('Select category(s)')
+    expect(page).to have_content('Select a Category:')
   end
 end
