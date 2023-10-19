@@ -1,0 +1,37 @@
+<div class="container form-login">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'login-form' }) do |f| %>
+    <div class="clase-header blue">
+      <a href="<%= root_path %>" class="back-arrow">←</a>
+      <h2 id="login-title">REGISTER</h2>
+      <%= f.submit "Sign up", class: "btn-login blue" %>
+    </div>
+    
+    <% if resource.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   <div class="container-inputs">
+      <div class="div-inputs">
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: "clase-field", placeholder: "Full Name" %>
+      </div>
+
+      <div class="div-inputs">
+        <%= f.email_field :email, id: "user_email", autocomplete: "email", class: "clase-field", placeholder: "Email" %>
+      </div>
+
+      <div class="div-inputs">
+        <%= f.password_field :password, autocomplete: "new-password", class: "clase-field", placeholder: "Password" %>
+      </div>
+
+      <div class="div-inputs">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "clase-field2", placeholder: "Confirm Password" %>
+      </div>
+    </div>
+  <% end %>
+</div>

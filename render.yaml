@@ -1,0 +1,18 @@
+databases:
+  - name: budgetracker
+    databaseName: budgetracker
+    user: budgetracker_user
+
+services:
+  - type: web
+    name: budget_app
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: budgetracker
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

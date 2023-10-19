@@ -1,0 +1,39 @@
+.new-button-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-button {
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 20px 0;
+}
+
+.new-category-container {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.field-input {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.field-category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+select option {
+  font-size: 18px;
+}

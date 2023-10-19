@@ -1,0 +1,27 @@
+<div class="container form-login">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f| %>
+    <div class="clase-header blue">
+      <a href="<%= root_path %>" class="back-arrow">←</a>
+      <h2 id="login-title">LOGIN</h2>
+      <%= f.submit "Log in", class: "btn-login blue" %>
+    </div>
+    
+    <% if flash[:alert] %>
+      <div id="error_explanation">
+        <p><%= flash[:alert] %></p>
+      </div>
+    <% end %>
+     <div class="container-inputs">
+      <div class="div-inputs">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "clase-field", placeholder: "Email" %>
+      </div>
+      <div class="div-inputs">
+        <%= f.password_field :password, autocomplete: "current-password", class: "clase-field2", placeholder: "Password" %>
+      </div>
+      </div>
+    <div class="forgot-password">
+      <%= link_to "Forgot password?", new_password_path(resource_name) %>
+    </div>
+    
+  <% end %>
+</div>

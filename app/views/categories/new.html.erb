@@ -1,0 +1,30 @@
+
+<div class="blue">
+    <div class="container-sm">
+      <div class="clase-header2 blue">
+        <a href="<%= categories_path %>" class="back-arrow"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
+        <h1 class="category-title">ADD CATEGORY</h1>
+        <a href="<%= categories_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+      </div>
+    </div>
+</div>
+
+    
+<%= form_with(model: @category, url: categories_path, local: true, class: "new-form", multipart: true) do |form| %>
+  <div class="field">
+    <%= form.text_field :name, required: true, class: "input", placeholder: "Name" %>
+  </div>
+  <div class="field upload-picture">
+    <%# image_tag("restaurant.png", class: "sample-picture") %>
+    
+    <%= form.label :icon, "Upload icon", class: "custom-file-upload" %>
+    <%= form.file_field :icon, required: true, class: "input input-file", style: "display: none;" %>
+  </div>
+  <div class="new-button-container">
+
+    <%= form.submit "CREATE", class: "start-button new-button green" %>
+    </a>
+
+  </div>
+<% end %>
+

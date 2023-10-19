@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+  --bold-font: 'Proxima Nova', sans-serif;
+  --light-font: 'Proxima Nova', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  font-family: 'Proxima Nova Bold', Arial, sans-serif;
+  color: var(--text-color);
+  overflow: scroll;
+}
+
+.blue {
+  background-color: var(--primary-color);
+}
+
+.green {
+  background-color: var(--secondary-color);
+}
+
+.grey {
+  color: var(--text-color);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.input-option {
+  width: 100%;
+  height: 5.5vw;
+  font-size: 1rem;
+  padding-left: 15px;
+  border: 1px solid #a19e9e;
+}
+
+.pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,308 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  color: white;
+}
+
+.header-container-blue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exchange {
+  width: 95%;
+  height: 8rem;
+  padding: 0 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: "proxima-nova-light", "Courier New", Courier, monospace;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20%;
+  color: white;
+  font-weight: 100;
+  font-family: Proxima Nova Light, sans-serif;
+}
+
+#login-title {
+  color: white;
+}
+
+.recent-most-ancient {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 33%;
+}
+
+.no-time,
+.most-recent,
+.most-ancient {
+  flex: 1;
+  text-align: center;
+}
+
+.recent,
+.most-ancient {
+  margin: 0 10px;
+}
+
+.time-paragraph {
+  color: white;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  padding: 0 0 0 8vw;
+  height: 10vw;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+img {
+  width: 9vw;
+  height: 9vw;
+}
+
+.name-date {
+  width: 60%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.date {
+  font-size: 0.8rem;
+}
+
+.total-category {
+  font-family: Proxima Nova Light, sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.separation {
+  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #cccccc91;
+  width: 80%;
+}
+
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: auto;
+  width: 100%;
+  height: 10%;
+}
+
+.foot-button p {
+  display: flex;
+  justify-content: center;
+  border: solid white 1px;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  width: 90%;
+}
+
+.container-sm {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-sm a {
+  font-family: 'Proxima Nova light', Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-sm p {
+  font-family: 'Proxima Nova bold', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.d-none {
+  display: none;
+}
+
+.icon {
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.category-container {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dot {
+  text-align: center;
+}
+
+.category-title {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+.most-recent-container {
+  color: white;
+}
+
+.most-ancient-container {
+  color: #cdcdcd;
+}
+
+.w-1-3 {
+  width: 33.3%;
+}
+
+.small-div p {
+  margin: 0;
+}
+
+.icon-purchase {
+  width: 50px;
+  height: 50px;
+}
+
+.flex-grow-1 {
+  flex: 1;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.date-text {
+  font-size: 12px;
+}
+
+.custom-file-upload {
+  background-color: var(--primary-color);
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+}
+
+#purchase_category_ids {
+  width: 100%;
+  color: #80868b;
+  padding-left: 15px;
+  height: 4vh;
+}
+
+.label-category {
+  padding-left: 15px;
+  color: #80868b;
+}
+
+.container-sm2,
+.amount {
+  font-family: 'Proxima Nova bold', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.container-sm2,
+.light {
+  font-family: 'Proxima Nova light', Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.container-sm2 {
+  width: 90%;
+  margin: 0 auto;
+}
