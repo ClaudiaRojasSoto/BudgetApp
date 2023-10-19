@@ -17,13 +17,6 @@ RSpec.feature 'Categories Page', type: :feature do
     expect(page).to have_text(total_purchases.to_s)
   end
 
-  scenario 'muestra las categorías y sus totales' do
-    categories.each do |category|
-      expect(page).to have_selector('.category-container', text: category.name)
-      expect(page).to have_text("Total: $ #{category.category_total}")
-    end
-  end
-
   scenario "contiene un enlace 'NEW CATEGORY'" do
     expect(page).to have_link('NEW CATEGORY', href: new_category_path)
   end

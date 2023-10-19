@@ -1,6 +1,6 @@
 <div class="container form-login">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'login-form' }) do |f| %>
-    <div class="header-container blue">
+    <div class="clase-header blue">
       <a href="<%= root_path %>" class="back-arrow">←</a>
       <h2 id="login-title">REGISTER</h2>
       <%= f.submit "Sign up", class: "btn-login blue" %>
@@ -16,21 +16,22 @@
         </ul>
       </div>
     <% end %>
-
-      <div class="field">
-        <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: "input", placeholder: "Full Name" %>
+   <div class="container-inputs">
+      <div class="div-inputs">
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: "clase-field", placeholder: "Full Name" %>
       </div>
 
-      <div class="field">
-        <%= f.email_field :email, id: "user_email", autocomplete: "email", class: "input", placeholder: "Email" %>
+      <div class="div-inputs">
+        <%= f.email_field :email, id: "user_email", autocomplete: "email", class: "clase-field", placeholder: "Email" %>
       </div>
 
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "Password" %>
+      <div class="div-inputs">
+        <%= f.password_field :password, autocomplete: "new-password", class: "clase-field", placeholder: "Password" %>
       </div>
 
-      <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "Confirm Password" %>
+      <div class="div-inputs">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "clase-field2", placeholder: "Confirm Password" %>
       </div>
+    </div>
   <% end %>
 </div>

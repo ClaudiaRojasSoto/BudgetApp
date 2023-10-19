@@ -1,6 +1,6 @@
 <div class="blue">
   <div class="container-sm">
-    <div class="header-container blue d-flex justify-between align-end">
+    <div class="clase-header2 blue d-flex justify-between align-end">
       <a href="<%= categories_path %>" class="back-button"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
       <h1 class="category-title"><%= @category.name %></h1>
       <a href="<%= categories_path %>" class="btn-login blue"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
@@ -25,7 +25,7 @@
 <div class="container-sm">
   <div class="total-amount d-flex justify-between align-center">
     <h2>Total Amount:</h2>
-    <p><%= @category.category_total %></p>
+    <p>$<%= @category.category_total %></p>
   </div>
 </div>
 
@@ -36,9 +36,9 @@
 </div>
 <hr>
 
-
+<div class="container-sm2">
 <% @category.purchases.order(created_at: :desc).each do |purchase| %>
-  <div class="transaction">
+  <div>
     <div class=" category-container">
       <div class="d-flex  gap-10">
         <div class="icon ">
@@ -49,11 +49,11 @@
         <div class="d-flex flex-column flex-grow-1">
 
           <div class="d-flex justify-between border-bottom-1">
-            <p class="mt-10"><%= purchase.name %></p>
-            <p class="mb-0 mt-10"><%= purchase.amount%></p>
+            <p class="mt-10 light"><%= purchase.name %></p>
+            <p class="mb-0 mt-10 amount">$<%= purchase.amount%></p>
           </div>
 
-          <p class="mb-0 mt-10 date-text"><%= purchase.created_at.strftime("%B %d, %Y %I:%M %p")%></p>
+          <p class="mb-0 mt-10 date-text light"><%= purchase.created_at.strftime("%B %d, %Y %I:%M %p")%></p>
 
         </div>
         
@@ -61,7 +61,9 @@
 
     </div>
   </div>
+  
 <% end %>
+</div>
 </div>
 
 

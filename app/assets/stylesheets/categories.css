@@ -146,6 +146,18 @@ img {
   margin: 0 auto;
 }
 
+.container-sm a {
+  font-family: 'Proxima Nova light', Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-sm p {
+  font-family: 'Proxima Nova bold', Arial, sans-serif;
+  font-weight: bold;
+}
+
 .d-flex {
   display: flex;
 }
@@ -218,6 +230,7 @@ img {
 .category-title {
   color: #fff;
   margin: 0;
+  font-size: 24px;
 }
 
 .most-recent-container {
@@ -274,4 +287,22 @@ img {
 .label-category {
   padding-left: 15px;
   color: #80868b;
+}
+
+.container-sm2,
+.amount {
+  font-family: 'Proxima Nova bold', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.container-sm2,
+.light {
+  font-family: 'Proxima Nova light', Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.container-sm2 {
+  width: 90%;
+  margin: 0 auto;
 }

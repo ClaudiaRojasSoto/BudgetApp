@@ -29,12 +29,11 @@
   padding: 15px 0;
 }
 
-.transaction {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .field-category {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+select option {
+  font-size: 18px;
 }

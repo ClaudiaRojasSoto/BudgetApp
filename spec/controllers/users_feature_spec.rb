@@ -11,6 +11,6 @@ RSpec.feature 'User Authentication', type: :feature do
 
     click_button 'Sign up'
 
-    expect(current_path).to eq('/home/start')
+    expect(current_path).to eq(categories_path)
   end
 end
